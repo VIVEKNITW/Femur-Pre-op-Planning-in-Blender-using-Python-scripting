@@ -99,6 +99,12 @@ def join_obj(obs, name):
     bpy.ops.object.join(ctx)
     bpy.context.object.name = name
 
+def remove_doubles(obj):
+    select_activate(obj)
+    bpy.ops.object.editmode_toggle()
+    bpy.ops.mesh.remove_doubles()
+    bpy.ops.object.editmode_toggle()
+
 
 def vertex_group(obj):
     select_activate(obj)
@@ -129,7 +135,10 @@ def get_collection_pos(coll_name):
     
 
 def move_to_collection(coll_name, obj):
-    bpy.data.collections[coll_name].objects.link(obj)
+    try:
+        bpy.data.collections[coll_name].objects.link(obj)
+    except:
+        pass
 
     coll_list = list(bpy.data.collections)
 
@@ -141,8 +150,9 @@ def move_to_collection(coll_name, obj):
                 pass
 
 
-def create_all_collections(Coll_list):
-    for name in Coll_list:
+def check_create_collection(myList):
+    for name in myList:
+        unhide_collection(name)
         if (get_collection_pos(name) == -1):
             add_new_collection(name)
 
@@ -163,3 +173,23 @@ def check_obj_list(obj_list):
         if obj not in objects_list:
             return_list.append(obj)
     return return_list
+
+
+def unhide_collection(name):
+    try:
+        vlayer = bpy.context.scene.view_layers['View Layer']
+        vlayer.layer_collection.children[name].hide_viewport = False
+        unhide_list([name for name in bpy.data.collections[name].objects])   
+    except:
+        pass
+
+def get_coordinates(points):
+    coord_values = []
+    for point in points:
+        point_y = bpy.data.objects[point].location[1]
+        coord_values.append(point_y)
+        point_z = bpy.data.objects[point].location[2]
+        coord_values.append(point_z)
+        point_x = bpy.data.objects[point].location[0]
+        coord_values.append(point_x)
+    return coord_values   

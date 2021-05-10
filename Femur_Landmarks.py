@@ -1,6 +1,6 @@
 import bpy 
 from bpy.types import Operator
-from .myPackage.Femur_functions import unhide, select_activate , move_to_collection, get_collection_pos, coll_list, delete_obj
+from .myPackage.Femur_functions import unhide, select_activate , move_to_collection, get_collection_pos, coll_list, delete_obj, unhide_collection, check_create_collection
 
 class FEMUR_OT_HipCenter(Operator):
     """ """
@@ -9,6 +9,7 @@ class FEMUR_OT_HipCenter(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):    
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Hip Center"])
             delete_obj(bpy.data.objects["Hip Center"])
@@ -30,6 +31,7 @@ class FEMUR_OT_FemurCenter(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Femur Center"])
             delete_obj(bpy.data.objects["Femur Center"])
@@ -51,6 +53,7 @@ class FEMUR_OT_MedialDistalPoint(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Medial Distal Point"])
             delete_obj(bpy.data.objects["Medial Distal Point"])
@@ -72,6 +75,7 @@ class FEMUR_OT_LateralDistalPoint(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Lateral Distal Point"])
             delete_obj(bpy.data.objects["Lateral Distal Point"])
@@ -93,6 +97,7 @@ class FEMUR_OT_LateralEpicondyle(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Lateral Epicondyle"])
             delete_obj(bpy.data.objects["Lateral Epicondyle"])
@@ -114,6 +119,7 @@ class FEMUR_OT_MedialEpicondyle(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Medial Epicondyle"])
             delete_obj(bpy.data.objects["Medial Epicondyle"])
@@ -135,6 +141,7 @@ class FEMUR_OT_PosteriorMedialPoint(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Posterior Medial Point"])
             delete_obj(bpy.data.objects["Posterior Medial Point"])
@@ -156,6 +163,7 @@ class FEMUR_OT_PosteriorLateralPoint(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Posterior Lateral Point"])
             delete_obj(bpy.data.objects["Posterior Lateral Point"])
@@ -177,6 +185,7 @@ class FEMUR_OT_NeckCenter(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Neck Center"])
             delete_obj(bpy.data.objects["Neck Center"])
@@ -199,6 +208,7 @@ class FEMUR_OT_GreaterTrochanter(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Greater Trochanter"])
             delete_obj(bpy.data.objects["Greater Trochanter"])
@@ -220,6 +230,7 @@ class FEMUR_OT_MidshaftFemurCenter(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Midshaft Femur Center"])
             delete_obj(bpy.data.objects["Midshaft Femur Center"])
@@ -241,6 +252,7 @@ class FEMUR_OT_AnatomicalPoint(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
+        check_create_collection(["Landmarks"])
         try:
             unhide(bpy.data.objects["Anatomical Point"])
             delete_obj(bpy.data.objects["Anatomical Point"])

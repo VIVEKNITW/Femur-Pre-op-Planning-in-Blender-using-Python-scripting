@@ -1,6 +1,6 @@
 import bpy
 from bpy.types import Operator
-from .myPackage.Femur_functions import save_orientation_InEditMode, deselect, select_activate, cursor_to_obj, add_plane, copy_object, delete_obj, save_orientation_obj, unhide_list, move_to_collection, check_obj_list
+from .myPackage.Femur_functions import save_orientation_InEditMode, deselect, select_activate, cursor_to_obj, add_plane, copy_object, delete_obj, save_orientation_obj, unhide_list, move_to_collection, check_obj_list, check_create_collection
 
 class FEMUR_OT_CoronalPlane(Operator):
     """ """
@@ -10,6 +10,7 @@ class FEMUR_OT_CoronalPlane(Operator):
 
     def execute(self, context):
         
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Coronal Plane", 'Mechanical Axis', 'Trans Epicondylar Axis', 'Femur Center'])
         
         try:
@@ -52,6 +53,7 @@ class FEMUR_OT_SagittalPlane(Operator):
     
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Sagittal Plane", 'Coronal Plane', 'Femur Center'])
         
         try:
@@ -81,6 +83,7 @@ class FEMUR_OT_DistalPlane(Operator):
     
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Distal Plane", 'Coronal Plane', 'Femur Center'])
 
         try:
@@ -110,6 +113,7 @@ class FEMUR_OT_CoronalAtHip(Operator):
     
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Coronal Plane at Hip", 'Coronal Plane', 'Hip Center'])
         
         try:
@@ -137,7 +141,8 @@ class FEMUR_OT_SagittalAtHip(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
-    
+        
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Sagittal Plane at Hip", 'Sagittal Plane', 'Hip Center'])
        
         try:
@@ -165,7 +170,8 @@ class FEMUR_OT_CoronalAtMidshaft(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
-
+        
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Coronal Plane at Midshaft", 'Coronal Plane', 'Mechanical Axis'])
         
         try:
@@ -194,7 +200,8 @@ class FEMUR_OT_SagittalAtMidshaft(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
-    
+        
+        check_create_collection(["Landmarks", "Axes", "Planes"])
         unhide_list(["Sagittal Plane at Midshaft", 'Sagittal Plane', 'Mechanical Axis'])
         
         try:

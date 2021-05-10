@@ -1,6 +1,6 @@
 import bpy
 from bpy.types import Operator
-from .myPackage.Femur_functions import copy_object, make_axis, unhide_list,unhide, move_to_collection, delete_obj, check_obj_list
+from .myPackage.Femur_functions import copy_object, make_axis, unhide_list,unhide, move_to_collection, delete_obj, check_obj_list, check_create_collection
 
 class FEMUR_OT_MechanicalAxis(Operator):
     """ """
@@ -9,7 +9,7 @@ class FEMUR_OT_MechanicalAxis(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
-        
+        check_create_collection(["Landmarks", "Axes"])
         unhide_list(["Mechanical Axis", 'Hip Center', 'Femur Center'])
         
         try:
@@ -22,7 +22,7 @@ class FEMUR_OT_MechanicalAxis(Operator):
             copy_object(bpy.data.objects['Hip Center'], "Hip Center for mech axis")
             copy_object(bpy.data.objects['Femur Center'], "Femur Center for mech axis")
             make_axis([bpy.data.objects['Hip Center for mech axis'], bpy.data.objects['Femur Center for mech axis']], "Mechanical Axis")
-       
+
             move_to_collection("Axes", bpy.data.objects["Mechanical Axis"])
         else:
             self.report({'ERROR'}, "missing items:" + ", ".join(check_list))
@@ -38,6 +38,7 @@ class FEMUR_OT_TransEpicondylarAxis(Operator):
     
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes"])
         unhide_list(["Trans Epicondylar Axis", 'Lateral Epicondyle', 'Medial Epicondyle'])
 
         try:
@@ -65,8 +66,9 @@ class FEMUR_OT_NeckLine(Operator):
 
     def execute(self, context):
         
+        check_create_collection(["Landmarks", "Axes"])
         unhide_list(["Neck Line", 'Hip Center', 'Neck Center'])
-        
+
         try:
             delete_obj(bpy.data.objects["Neck Line"])
         except:
@@ -92,8 +94,9 @@ class FEMUR_OT_DistalJointLine(Operator):
 
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes"])
         unhide_list(["Distal Joint Line", 'Medial Distal Point', 'Lateral Distal Point'])
-        
+
         try:
             delete_obj(bpy.data.objects["Distal Joint Line"])
         except:
@@ -119,6 +122,7 @@ class FEMUR_OT_PosteriorCondylarAxis(Operator):
 
     def execute(self, context):
 
+        check_create_collection(["Landmarks", "Axes"])
         unhide_list(["Posterir Condylar Axis", 'Posterior Lateral Point', 'Posterior Medial Point'])
         
         try:
@@ -145,11 +149,10 @@ class FEMUR_OT_AnatomicalAxis(Operator):
     bl_options = {"REGISTER", "UNDO"}
     
     def execute(self, context):
-        try:
-            unhide_list(["Anatomical Axis", 'Anatomical Point', 'Femur Center'])
-        except:
-            pass
-
+        
+        check_create_collection(["Landmarks", "Axes"])
+        unhide_list(["Anatomical Axis", 'Anatomical Point', 'Femur Center'])
+        
         try:
             delete_obj(bpy.data.objects["Anatomical Axis"])
         except:
