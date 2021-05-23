@@ -11,7 +11,7 @@ Need of an hour is to just have an automatic/semi-automatic way of doing it inor
 
 Identifying landmarks is still a manual task. User has to keep the 3D cursor at the location which he as identified to be a landmard & press respective button to get the object in scene collection. User has to select total 12 landmarks inorder to get all the meanurements in the end. User can skip few of these as well according to his need. 
 
-![image](https://user-images.githubusercontent.com/61643913/119250420-9e101800-bbbd-11eb-8160-57f8217bcef5.png) ![image](https://user-images.githubusercontent.com/61643913/119250423-a2d4cc00-bbbd-11eb-90b1-4bfa82cebf39.png) ![image](https://user-images.githubusercontent.com/61643913/119250425-a9fbda00-bbbd-11eb-8ae0-6bcc62df15aa.png)
+![image](https://user-images.githubusercontent.com/61643913/119250420-9e101800-bbbd-11eb-8160-57f8217bcef5.png)  
 
 Axes are created by using these landmarks. User just need to click on respective button on the panel to get the axis. Same is applicable for the planes. 
 
@@ -19,3 +19,8 @@ While creating axes, planes or measurements if one or more landmard are missing,
 
 ![image](https://user-images.githubusercontent.com/61643913/119252917-53e26300-bbcc-11eb-9df8-80cc51c97bf6.png)
 
+
+![image](https://user-images.githubusercontent.com/61643913/119250423-a2d4cc00-bbbd-11eb-90b1-4bfa82cebf39.png)
+
+
+![image](https://user-images.githubusercontent.com/61643913/119250425-a9fbda00-bbbd-11eb-8ae0-6bcc62df15aa.png)
