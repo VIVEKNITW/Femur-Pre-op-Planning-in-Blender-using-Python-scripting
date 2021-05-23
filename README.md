@@ -15,12 +15,14 @@ Identifying landmarks is still a manual task. User has to keep the 3D cursor at 
 
 Axes are created by using these landmarks. User just need to click on respective button on the panel to get the axis. Same is applicable for the planes. 
 
-While creating axes, planes or measurements if one or more landmard are missing, on clicking the button, system will show the error message giving information to user about the need of missing item. This also makes sure that system wont crash when user continuously try operations which is missing few essential components. 
+While creating axes, planes or measurements if one or more landmard are missing, on clicking the button, system will show the error message giving information to user about the need of missing item. This also makes sure that system wont crash when user continuously try operations which is missing few essential components.
 
 ![image](https://user-images.githubusercontent.com/61643913/119252917-53e26300-bbcc-11eb-9df8-80cc51c97bf6.png)
 
+The measurements require the landmarks to be projected onto a particular plane. This can be achiewed by using shrinkwrap operation in actual scenario. By scripting, we can get all the projections on a single click hence reducing the effort from the user.
 
-![image](https://user-images.githubusercontent.com/61643913/119250423-a2d4cc00-bbbd-11eb-90b1-4bfa82cebf39.png)
+![image](https://user-images.githubusercontent.com/61643913/119250423-a2d4cc00-bbbd-11eb-90b1-4bfa82cebf39.png) ![image](https://user-images.githubusercontent.com/61643913/119255287-8f832a00-bbd8-11eb-9213-1ab6a6336bf7.png)
 
+For angle and length measurement, measureit tool can be used. Since this is standard blender add-on, I have given that link to my femur add-on & can be used deliberately. 
 
 ![image](https://user-images.githubusercontent.com/61643913/119250425-a9fbda00-bbbd-11eb-8ae0-6bcc62df15aa.png)
