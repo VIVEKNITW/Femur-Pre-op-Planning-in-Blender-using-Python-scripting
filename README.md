@@ -13,3 +13,9 @@ Identifying landmarks is still a manual task. User has to keep the 3D cursor at 
 
 ![image](https://user-images.githubusercontent.com/61643913/119250420-9e101800-bbbd-11eb-8160-57f8217bcef5.png) ![image](https://user-images.githubusercontent.com/61643913/119250423-a2d4cc00-bbbd-11eb-90b1-4bfa82cebf39.png) ![image](https://user-images.githubusercontent.com/61643913/119250425-a9fbda00-bbbd-11eb-8ae0-6bcc62df15aa.png)
 
+Axes are created by using these landmarks. User just need to click on respective button on the panel to get the axis. Same is applicable for the planes. 
+
+While creating axes, planes or measurements if one or more landmard are missing, on clicking the button, system will show the error message giving information to user about the need of missing item. This also makes sure that system wont crash when user continuously try operations which is missing few essential components. 
+
+![image](https://user-images.githubusercontent.com/61643913/119252917-53e26300-bbcc-11eb-9df8-80cc51c97bf6.png)
+
